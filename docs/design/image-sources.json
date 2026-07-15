@@ -1,0 +1,156 @@
+{
+  "/images/about/founders.webp": {
+    "source": "https://images.pexels.com/photos/5865209/pexels-photo-5865209.jpeg",
+    "width": 840,
+    "height": 1050,
+    "bytes": 71830,
+    "fetched": "2026-07-15"
+  },
+  "/images/hero-cafe-interior.webp": {
+    "source": "https://images.pexels.com/photos/7601665/pexels-photo-7601665.jpeg",
+    "width": 2560,
+    "height": 1440,
+    "bytes": 397948,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/cappuccino.webp": {
+    "source": "https://images.pexels.com/photos/6747870/pexels-photo-6747870.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 24986,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/chai-latte.webp": {
+    "source": "https://images.pexels.com/photos/2262832/pexels-photo-2262832.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 9870,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/chicken-and-avocado-sandwich.webp": {
+    "source": "https://images.pexels.com/photos/20404894/pexels-photo-20404894.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 32558,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/coffee-frapp.webp": {
+    "source": "https://images.pexels.com/photos/1889571/pexels-photo-1889571.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 21696,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/cold-brew.webp": {
+    "source": "https://images.pexels.com/photos/27860686/pexels-photo-27860686.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 57916,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/drip-coffee.webp": {
+    "source": "https://images.pexels.com/photos/2616164/pexels-photo-2616164.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 29488,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/earl-grey-tea.webp": {
+    "source": "https://images.pexels.com/photos/11285384/pexels-photo-11285384.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 34184,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/espresso.webp": {
+    "source": "https://images.pexels.com/photos/24513973/pexels-photo-24513973.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 35096,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/flat-white.webp": {
+    "source": "https://images.pexels.com/photos/894696/pexels-photo-894696.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 21394,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/ham-and-cheese-croissant.webp": {
+    "source": "https://images.pexels.com/photos/8207189/pexels-photo-8207189.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 37348,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/ham-and-cheese-sandwich.webp": {
+    "source": "https://images.pexels.com/photos/8023677/pexels-photo-8023677.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 24458,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/hot-chocolate.webp": {
+    "source": "https://images.pexels.com/photos/5419231/pexels-photo-5419231.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 33750,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/iced-americano.webp": {
+    "source": "https://images.pexels.com/photos/4921518/pexels-photo-4921518.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 20906,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/iced-latte.webp": {
+    "source": "https://images.pexels.com/photos/18142624/pexels-photo-18142624.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 12726,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/iced-mocha.webp": {
+    "source": "https://images.pexels.com/photos/26951876/pexels-photo-26951876.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 35924,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/latte.webp": {
+    "source": "https://images.pexels.com/photos/997670/pexels-photo-997670.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 22790,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/macchiato.webp": {
+    "source": "https://images.pexels.com/photos/5211567/pexels-photo-5211567.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 15862,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/matcha-latte.webp": {
+    "source": "https://images.pexels.com/photos/911810/pexels-photo-911810.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 35636,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/mocha.webp": {
+    "source": "https://images.pexels.com/photos/228183/pexels-photo-228183.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 44206,
+    "fetched": "2026-07-15"
+  },
+  "/images/menu/veggie-sandwich.webp": {
+    "source": "https://images.pexels.com/photos/5112594/pexels-photo-5112594.jpeg",
+    "width": 640,
+    "height": 640,
+    "bytes": 35486,
+    "fetched": "2026-07-15"
+  }
+}

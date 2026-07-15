@@ -1,0 +1,150 @@
+/*
+ * Brew & Co — Design Tokens
+ * Tailwind CSS v4, CSS-first config (no tailwind.config.js).
+ *
+ * Usage: import this file from app/globals.css, after the Tailwind import:
+ *
+ *   @import "tailwindcss";
+ *   @import "../docs/design/tokens/tokens.css";
+ *
+ * Everything below lives inside @theme, so Tailwind generates matching
+ * utilities automatically — e.g. --color-cherry gives you bg-cherry,
+ * text-cherry, border-cherry, ring-cherry, fill-cherry, etc. for free.
+ * See ../style-guide.md for the reasoning behind each value.
+ */
+
+@theme {
+  /* ---------------------------------------------------------------------
+   * Color — the coffee cherry's journey from fruit to finished roast.
+   * Base tokens (cherry / gold / espresso / latte / crema / ink) are the
+   * only ones components should reach for directly. The numbered tints
+   * exist for hover / active / disabled / subtle states.
+   * ------------------------------------------------------------------- */
+  --color-cherry-50: #fbebe9;
+  --color-cherry-300: #c96b64;
+  --color-cherry: #9c2b33;
+  --color-cherry-700: #7a2029;
+
+  --color-gold-300: #dcb877;
+  --color-gold: #c08a34;
+  --color-gold-700: #96691f;
+
+  --color-espresso-300: #6b4a37;
+  --color-espresso: #2a1b12;
+  --color-espresso-900: #170f0a;
+
+  --color-latte-100: #f0e0c4;
+  --color-latte: #e4c9a0;
+
+  --color-crema-100: #fbf7ef;
+  --color-crema: #f6eee1;
+
+  --color-ink: #1e1611;
+  --color-ink-muted: #5c4d40;
+
+  /* ---------------------------------------------------------------------
+   * Type — three roles, three families. Map next/font/google variables
+   * here; components should only ever reference font-display / font-body
+   * / font-mono, never a Google Font name directly.
+   * ------------------------------------------------------------------- */
+  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
+  --font-body: var(--font-work-sans), "Segoe UI", system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), "SFMono-Regular", ui-monospace, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.25rem;
+  --text-3xl: 2.875rem;
+  --text-4xl: 3.75rem;
+  --text-5xl: 4.75rem;
+
+  /* ---------------------------------------------------------------------
+   * Spacing — 4px base, named after café vocabulary so component code
+   * reads as "pot" / "carafe" spacing rather than an arbitrary index.
+   * ------------------------------------------------------------------- */
+  --spacing-sip: 0.25rem;    /* 4px  */
+  --spacing-cup: 0.5rem;     /* 8px  */
+  --spacing-mug: 1rem;       /* 16px */
+  --spacing-pot: 1.5rem;     /* 24px */
+  --spacing-carafe: 2.5rem;  /* 40px */
+  --spacing-urn: 4rem;       /* 64px */
+  --spacing-roastery: 6rem;  /* 96px */
+
+  /* ---------------------------------------------------------------------
+   * Layout
+   * ------------------------------------------------------------------- */
+  --container-brew: 72rem; /* 1152px page content max-width */
+
+  /* ---------------------------------------------------------------------
+   * Radius
+   * ------------------------------------------------------------------- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-pill: 999px;
+
+  /* ---------------------------------------------------------------------
+   * Elevation — two steps only: resting and lifted.
+   * ------------------------------------------------------------------- */
+  --shadow-card: 0 12px 32px -16px rgb(42 27 18 / 0.35);
+  --shadow-lift: 0 24px 48px -20px rgb(42 27 18 / 0.45);
+
+  /* ---------------------------------------------------------------------
+   * Motion — one easing curve, three durations. See style-guide.md §5.
+   * ------------------------------------------------------------------- */
+  --ease-brew: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-base: 240ms;
+  --duration-slow: 420ms;
+
+  /* ---------------------------------------------------------------------
+   * The Roast Line — signature gradient, cherry -> gold -> espresso.
+   * See style-guide.md §7. Exposed as a theme value so it's available as
+   * bg-[image:var(--gradient-roast)] anywhere utilities reach, in
+   * addition to the .roast-line / .roast-underline helper classes below.
+   * ------------------------------------------------------------------- */
+  --gradient-roast: linear-gradient(
+    90deg,
+    var(--color-cherry) 0%,
+    var(--color-gold) 50%,
+    var(--color-espresso) 100%
+  );
+}
+
+/* ---------------------------------------------------------------------
+ * Roast Line helper classes.
+ * Plain CSS (not @utility) so they work the same regardless of Tailwind
+ * version/config — safe to compose with Tailwind utility classes.
+ * See components.md → "Section Divider (Roast Line)" for usage.
+ * ------------------------------------------------------------------- */
+.roast-line {
+  height: 3px;
+  width: 100%;
+  background-image: var(--gradient-roast);
+  border-radius: var(--radius-pill);
+}
+
+.roast-underline {
+  background-image: var(--gradient-roast);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  transition: background-size var(--duration-base) var(--ease-brew);
+  padding-bottom: var(--spacing-sip);
+}
+
+.roast-underline:hover,
+.roast-underline:focus-visible,
+.roast-underline[aria-current="page"] {
+  background-size: 100% 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roast-underline {
+    transition: none;
+  }
+}

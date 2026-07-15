@@ -1,0 +1,73 @@
+/**
+ * Minimal quote-aware CSV parser. Handles quoted fields with embedded commas
+ * and escaped ("") quotes — everything docs/design/menu-items.csv needs.
+ * Not a general-purpose CSV library; not worth a dependency for one small,
+ * trusted, local file.
+ */
+export function parseCSV(text: string): string[][] {
+  const rows: string[][] = [];
+  let row: string[] = [];
+  let field = "";
+  let inQuotes = false;
+  let i = 0;
+
+  while (i < text.length) {
+    const char = text[i];
+
+    if (inQuotes) {
+      if (char === '"') {
+        if (text[i + 1] === '"') {
+          field += '"';
+          i += 2;
+          continue;
+        }
+        inQuotes = false;
+        i++;
+        continue;
+      }
+      field += char;
+      i++;
+      continue;
+    }
+
+    if (char === '"') {
+      inQuotes = true;
+      i++;
+      continue;
+    }
+    if (char === ",") {
+      row.push(field);
+      field = "";
+      i++;
+      continue;
+    }
+    if (char === "\r") {
+      i++;
+      continue;
+    }
+    if (char === "\n") {
+      row.push(field);
+      rows.push(row);
+      row = [];
+      field = "";
+      i++;
+      continue;
+    }
+    field += char;
+    i++;
+  }
+
+  if (field.length > 0 || row.length > 0) {
+    row.push(field);
+    rows.push(row);
+  }
+
+  return rows;
+}
+
+export function parseCSVRecords(text: string): Record<string, string>[] {
+  const [header, ...rows] = parseCSV(text.trim());
+  return rows
+    .filter((row) => row.length > 1 || row[0] !== "")
+    .map((row) => Object.fromEntries(header.map((key, index) => [key, row[index] ?? ""])));
+}
