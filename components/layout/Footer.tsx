@@ -54,12 +54,10 @@ export function Footer() {
             </a>
           </address>
           <dl className="grid grid-cols-[auto_1fr] gap-x-mug gap-y-sip font-mono text-xs text-crema/60">
-            <dt>Mon–Thu</dt>
-            <dd>7:30–17:00</dd>
-            <dt>Fri</dt>
-            <dd>7:30–21:30 (open mic from 7pm)</dd>
+            <dt>Mon–Fri</dt>
+            <dd>6:00–20:00 (open mic Fri from 7pm)</dd>
             <dt>Sat</dt>
-            <dd>8:00–17:00 (cupping at 10am)</dd>
+            <dd>7:00–21:00 (cupping at 10am)</dd>
             <dt>Sun</dt>
             <dd>8:30–16:00</dd>
           </dl>
