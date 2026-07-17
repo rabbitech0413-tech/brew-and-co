@@ -3,6 +3,7 @@ import { Fraunces, Work_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "@/components/layout/NavBar";
 import { Footer } from "@/components/layout/Footer";
+import { ChatWidget } from "@/components/layout/ChatWidget";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -45,6 +46,7 @@ export default function RootLayout({
         <NavBar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <ChatWidget />
       </body>
     </html>
   );
