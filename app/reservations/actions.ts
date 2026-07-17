@@ -9,7 +9,8 @@ export interface ReservationFormState {
 // Booking submissions are forwarded to an n8n workflow (webhook set in
 // N8N_RESERVATION_WEBHOOK_URL) which fans out to email / Google Sheet /
 // Calendar. Kept server-side so the URL never ships to the client.
-const CALL_TO_ACTION = "Couldn't submit your booking — please call us on 020 7123 4567.";
+const CALL_TO_ACTION =
+  "Couldn't submit your booking — please email us at rabbitech0413@gmail.com or call 020 7123 4567.";
 
 export async function createReservation(
   _prevState: ReservationFormState,

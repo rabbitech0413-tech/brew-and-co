@@ -41,10 +41,10 @@ export function Footer() {
           <address className="flex flex-col gap-cup font-body text-sm not-italic text-crema/70">
             <span>12 Bellenden Road, Peckham, London SE15</span>
             <a
-              href="mailto:hello@brewand.co"
+              href="mailto:rabbitech0413@gmail.com"
               className={`roast-underline w-fit rounded-sm hover:text-crema ${FOCUS_ON_ESPRESSO}`}
             >
-              hello@brewand.co
+              rabbitech0413@gmail.com
             </a>
             <a
               href="tel:+442071234567"

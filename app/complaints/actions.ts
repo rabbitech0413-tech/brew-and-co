@@ -11,7 +11,7 @@ export interface ComplaintFormState {
 const COMPLAINT_TYPES: ComplaintType[] = ["Complaint", "Suggestion", "Compliment"];
 
 const CALL_TO_ACTION =
-  "Couldn't send your message — please email us at hello@brewand.co or call 020 7123 4567.";
+  "Couldn't send your message — please email us at rabbitech0413@gmail.com or call 020 7123 4567.";
 
 /**
  * Complaints & feedback submissions are forwarded to an n8n workflow
