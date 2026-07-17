@@ -6,11 +6,11 @@ export interface ReservationFormState {
   fieldErrors?: Partial<Record<"name" | "partySize" | "date" | "time", string>>;
 }
 
-/**
- * No booking system is wired up yet — this validates and returns a
- * confirmation, deliberately not persisting anywhere (see the implementation
- * plan's stated scope limit; same as the footer newsletter stub).
- */
+// Booking submissions are forwarded to an n8n workflow (webhook set in
+// N8N_RESERVATION_WEBHOOK_URL) which fans out to email / Google Sheet /
+// Calendar. Kept server-side so the URL never ships to the client.
+const CALL_TO_ACTION = "Couldn't submit your booking — please call us on 020 7123 4567.";
+
 export async function createReservation(
   _prevState: ReservationFormState,
   formData: FormData
@@ -31,6 +31,30 @@ export async function createReservation(
 
   if (Object.keys(fieldErrors).length > 0) {
     return { status: "error", fieldErrors, message: "Fix the fields below and try again." };
+  }
+
+  const webhookUrl = process.env.N8N_RESERVATION_WEBHOOK_URL;
+  if (!webhookUrl) {
+    console.error("N8N_RESERVATION_WEBHOOK_URL is not set — reservation not delivered.");
+    return { status: "error", message: CALL_TO_ACTION };
+  }
+
+  try {
+    const res = await fetch(webhookUrl, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        name,
+        partySize: Number(partySize),
+        date,
+        time,
+        submittedAt: new Date().toISOString(),
+      }),
+    });
+    if (!res.ok) throw new Error(`n8n responded ${res.status}`);
+  } catch (error) {
+    console.error("Reservation webhook failed:", error);
+    return { status: "error", message: CALL_TO_ACTION };
   }
 
   return {
