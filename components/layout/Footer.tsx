@@ -94,7 +94,15 @@ export function Footer() {
       <div className="border-t border-crema/15">
         <div className="mx-auto flex max-w-brew flex-col gap-cup px-mug py-mug font-body text-sm text-crema/60 sm:flex-row sm:items-center sm:justify-between md:px-pot">
           <span>&copy; {new Date().getFullYear()} Brew &amp; Co.</span>
-          <span>Peckham, London</span>
+          <div className="flex items-center gap-mug">
+            <Link
+              href="/complaints"
+              className={`roast-underline rounded-sm hover:text-crema ${FOCUS_ON_ESPRESSO}`}
+            >
+              Complaints
+            </Link>
+            <span>Peckham, London</span>
+          </div>
         </div>
       </div>
     </footer>
