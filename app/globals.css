@@ -7,6 +7,36 @@ body {
   font-family: var(--font-body);
 }
 
+/* n8n chat widget — brand overrides (ChatWidget.tsx mounts it site-wide).
+   The widget exposes --chat--* variables; map them to our tokens. */
+:root {
+  --chat--color-primary: var(--color-cherry);
+  --chat--color-primary-shade-50: var(--color-cherry-700);
+  --chat--color-primary-shade-100: var(--color-cherry-700);
+  --chat--color-secondary: var(--color-gold);
+  --chat--color-light: var(--color-crema-100);
+  --chat--color-dark: var(--color-ink);
+
+  --chat--header--background: var(--color-espresso);
+  --chat--header--color: var(--color-crema);
+
+  --chat--message--bot--background: var(--color-crema-100);
+  --chat--message--bot--color: var(--color-ink);
+  --chat--message--user--background: var(--color-cherry);
+  --chat--message--user--color: var(--color-crema-100);
+
+  --chat--toggle--background: var(--color-cherry);
+  --chat--toggle--hover--background: var(--color-cherry-700);
+  --chat--toggle--active--background: var(--color-cherry-700);
+
+  --chat--window--width: 380px;
+  --chat--window--height: 600px;
+}
+
+#n8n-chat {
+  font-family: var(--font-body);
+}
+
 /* HeroHome's staggered entrance (components.md §3a). Applied via
    motion-safe:animate-[...], so prefers-reduced-motion skips it entirely
    and the content is simply present. */
